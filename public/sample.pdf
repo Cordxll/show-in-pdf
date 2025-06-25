@@ -1,0 +1,51 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R 4 0 R] /Count 2 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 5 0 R >>
+endobj
+4 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 6 0 R >>
+endobj
+5 0 obj
+<< /Length 100 >>
+stream
+BT
+/F1 12 Tf
+100 700 Td
+(This is a sample PDF document with multiple pages) Tj
+0 -20 Td
+(Page 1 content goes here) Tj
+ET
+endstream
+endobj
+6 0 obj
+<< /Length 80 >>
+stream
+BT
+/F1 12 Tf
+100 700 Td
+(This is page 2 of the sample document) Tj
+0 -20 Td
+(More content here) Tj
+ET
+endstream
+endobj
+xref
+0 7
+0000000000 65535 f 
+0000000010 00000 n 
+0000000053 00000 n 
+0000000100 00000 n 
+0000000167 00000 n 
+0000000234 00000 n 
+0000000384 00000 n 
+trailer
+<< /Root 1 0 R /Size 7 >>
+startxref
+514
+%%EOF

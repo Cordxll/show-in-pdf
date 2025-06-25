@@ -1,49 +1,82 @@
-# Getting Started with Create React App
+# Professional PDF Viewer with Hardcoded Highlights
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A React-based PDF viewer with predefined highlights that can be easily configured through a separate data file.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- 🎯 **Hardcoded Highlights**: Predefined highlight areas that display automatically
+- 🎨 **Customizable Colors**: Each highlight can have its own color and note
+- 📱 **Responsive Design**: Professional layout that works on all screen sizes
+- 🔧 **Easy Configuration**: All highlight coordinates stored in a separate file
+- 🚫 **No User Interaction**: Users cannot add/remove highlights (read-only)
 
-### `npm start`
+## Project Structure
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+```
+src/
+├── components/
+│   ├── Header.js              # Application header
+│   ├── PDFViewer.js          # Main PDF viewer component
+│   ├── HighlightRenderer.js   # Renders highlight overlays
+│   └── HighlightInfo.js      # Displays highlight information panel
+├── data/
+│   └── highlightCoordinates.js # ⭐ Highlight configuration file
+├── App.js                     # Main application component
+└── App.css                    # Styling
+```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## How to Modify Highlights
 
-### `npm test`
+### 1. Edit Highlight Coordinates
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Open `src/data/highlightCoordinates.js` and modify the highlights array:
 
-### `npm run build`
+```javascript
+export const highlightCoordinates = [
+  {
+    id: 1,                                    // Unique identifier
+    pageIndex: 0,                            // Page number (0-based)
+    top: 15,                                 // Distance from top (%)
+    left: 10,                                // Distance from left (%)
+    width: 40,                               // Width of highlight (%)
+    height: 3,                               // Height of highlight (%)
+    color: 'rgba(255, 255, 0, 0.4)',       // Background color
+    note: 'Important section 1'             // Description/note
+  }
+  // Add more highlights here...
+];
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### 2. Coordinate System
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- **pageIndex**: 0 for first page, 1 for second page, etc.
+- **top/left/width/height**: Percentages relative to the page size
+- **color**: Any valid CSS color (rgba recommended for transparency)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### 3. Adding New Highlights
 
-### `npm run eject`
+To add a new highlight:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+1. Open `src/data/highlightCoordinates.js`
+2. Add a new object to the array with a unique `id`
+3. Set the coordinates and styling
+4. Save the file - changes will be reflected immediately
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Getting Started
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+1. **Install dependencies:**
+   ```bash
+   npm install
+   ```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+2. **Start the development server:**
+   ```bash
+   npm start
+   ```
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+3. **Replace the sample PDF:**
+   - Add your PDF file to the `public/` folder
+   - Update the `fileUrl` prop in `src/App.js`
 
 ### Code Splitting
 
